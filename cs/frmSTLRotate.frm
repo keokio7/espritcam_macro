@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} frmSTLRotate 
    Caption         =   "STL Rotate"
-   ClientHeight    =   2550
+   ClientHeight    =   3390
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   2175
@@ -120,6 +120,12 @@ Public Sub TurnSTLByDirectionCheckInfo()
 End Sub
 
 
+Private Sub CommandButton1_Click()
+' added this new button for front turning redo
+' call step2_6 will just run front turning macro after fixing segments manually
+Call Step2_6
+End Sub
+
 Private Sub UserForm_Initialize()
    Me.Left = GetSetting("Userform Positioning", "Position-Left-" + Me.Name, "Left", 0)
    Me.Top = GetSetting("Userform Positioning", "Position-Top-" + Me.Name, "Top", 0)
@@ -130,9 +136,8 @@ Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
 End Sub
 
 Private Sub cmdBtn2_Click()
-
-     Call ClickBtn1_2
-
+             Call ClickBtn1_2
+    
 End Sub
 
 Private Sub cmdRotate045_Click()
