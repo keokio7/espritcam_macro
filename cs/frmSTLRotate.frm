@@ -23,6 +23,8 @@ Attribute VB_Exposed = False
 
 
 
+
+
 Private Sub chkFace_Click()
     
     Dim strWorkPlane As String

@@ -301,7 +301,6 @@ Public Sub ClickBtn1_2()
 
 
 
-    If MsgBox("[2] Generate toolpaths for [FRONT TURNING]. Please make sure the STL properly located.", vbYesNo, "CAM Automation") = vbYes Then
         Call Step1_2
         Call Step2_4
         Call Step2_6
@@ -312,10 +311,8 @@ Public Sub ClickBtn1_2()
                 ly.Visible = True
             End If
         Next
-        
-    Else
+
         Exit Sub
-    End If
 End Sub
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
