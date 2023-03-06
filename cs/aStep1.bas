@@ -303,8 +303,8 @@ Sub Step1_2()
     End If
     
     Dim strTolerance As String
-    'strTolerance = InputBox("Enter Tolerance For Turning Profile.", "CAM Automation - For Turning Profile", "0.0001")
-    strTolerance = InputBox("Enter Tolerance For Turning Profile.", "CAM Automation - For Turning Profile", DEFAULT_TOLERANCE)
+    strTolerance = InputBox("Enter Tolerance For Turning Profile.", "CAM Automation - For Turning Profile", "0.0001")
+    'strTolerance = InputBox("Enter Tolerance For Turning Profile.", "CAM Automation - For Turning Profile", DEFAULT_TOLERANCE)
     
     Call GetTurningProfile(CDbl(strTolerance))
     Call GetTurningProfile_EditBoundary(rSTLXEnd)
@@ -719,7 +719,7 @@ Sub GetTurningProfile_EditBoundary(STLRightEndX As Double)
         Call .Add(segmentSelected)  'Add the segment to the selection object
     End With
     
-    Call mSelection.Translate(0, 1, 0, 0)
+    Call mSelection.Translate(0, 1.25, 0, 0)
     
     Dim mRefGraphicObject() As Esprit.graphicObject
     Dim returnedFC As Esprit.FeatureChain

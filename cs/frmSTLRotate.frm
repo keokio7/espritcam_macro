@@ -130,14 +130,9 @@ Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
 End Sub
 
 Private Sub cmdBtn2_Click()
-    If CheckSTLDirectionLine Then
-        Call ClickBtn1_2
-    Else
-        If InputBox("STL Direction looks wrong. To Force Process, please input process code(ask the Director the process code).", "!!!!! Wrong STL Direction !!!!!") = "0000" Then
-            Call ClickBtn1_2
-        End If
-    End If
-    
+
+     Call ClickBtn1_2
+
 End Sub
 
 Private Sub cmdRotate045_Click()

@@ -302,39 +302,16 @@ Public Sub ClickBtn1_2()
     Load frmSTLRotate
     frmSTLRotate.Hide
     Unload frmSTLRotate
-    
-    Dim nErrorCode As Integer
-    nErrorCode = 0
+   
 
     If MsgBox("[2] Generate toolpaths for [FRONT TURNING]. Please make sure the STL properly located.", vbYesNo, "CAM Automation") = vbYes Then
         Call Step1_2
-        nErrorCode = Step2_4
-        If nErrorCode < 0 Then
-            Select Case nErrorCode
-            Case -991
-                Call MsgBox("Cannot find a parallel segment.", vbCritical, "Error in Front Turning(Step2_4)")
-                Exit Sub
-            Case Else
-                Call MsgBox("Error in Step2_4(Draw toolpath segments and arcs automatically.).", vbCritical, "Error in Front Turning(Step2_4)")
-                Exit Sub
-            End Select
-        End If
-        
-        nErrorCode = Step2_6
-        If nErrorCode < 0 Then
-            Select Case nErrorCode
-            Case -991
-                Call MsgBox("More than 2 Chain features are made. Please check it.", vbCritical, "Error in Front Truning.(Step2_6)")
-                Exit Sub
-            Case Else
-                Call MsgBox("Error in Step2_6(Create A chain feature.).", vbCritical, "Error in Front Turning(Step2_6)")
-                Exit Sub
-            End Select
-        End If
+       Call Step2_4
+        Call Step2_6
         
         Dim ly As Esprit.Layer
         For Each ly In Document.Layers
-            If (ly.Name = "STL" Or ly.Name = "±âº»°ª") Then
+            If (ly.Name = "STL" Or ly.Name = "¡¾?¨¬?¡Æ¨£") Then
                 ly.Visible = True
             End If
         Next
