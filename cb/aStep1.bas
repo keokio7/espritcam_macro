@@ -714,7 +714,7 @@ Sub GetTurningProfile_EditBoundary(STLRightEndX As Double)
         Call .Add(segmentSelected)  'Add the segment to the selection object
     End With
     
-    Call mSelection.Translate(0, 1, 0, 0)
+    Call mSelection.Translate(0, 1.25, 0, 0)
     
     Dim mRefGraphicObject() As Esprit.graphicObject
     Dim returnedFC As Esprit.FeatureChain
