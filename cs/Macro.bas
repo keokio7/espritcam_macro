@@ -299,27 +299,29 @@ End Sub
 '' BTN#1-2 [1-2] Generate toolpaths for [FRONT TURNING]. Please make sure the STL properly located."
 Public Sub ClickBtn1_2()
 
-    Load frmSTLRotate
-    frmSTLRotate.Hide
-    Unload frmSTLRotate
-   
+Load frmSTLRotate
+frmSTLRotate.Hide
+Unload frmSTLRotate
 
-    If MsgBox("[2] Generate toolpaths for [FRONT TURNING]. Please make sure the STL properly located.", vbYesNo, "CAM Automation") = vbYes Then
-        Call Step1_2
-       Call Step2_4
-        Call Step2_6
-        
-        Dim ly As Esprit.Layer
-        For Each ly In Document.Layers
-            If (ly.Name = "STL" Or ly.Name = "б╛?им?б╞иг") Then
-                ly.Visible = True
-            End If
-        Next
-        
-    Else
-        Exit Sub
-    End If
+
+If MsgBox("[2] Generate toolpaths for [FRONT TURNING]. Please make sure the STL properly located.", vbYesNo, "CAM Automation") = vbYes Then
+Call Step1_2
+Call Step2_4
+Call Step2_6
+
+Dim ly As Esprit.Layer
+For Each ly In Document.Layers
+If (ly.Name = "STL" Or ly.Name = "") Then
+ly.Visible = True
+End If
+Next
+
+Else
+Exit Sub
+End If
+
 End Sub
+
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '' BTN#2 [2] Generate toolpaths for [ROUGH ENDMILL R6.0]. Please make sure the STL properly located."
 Public Sub ClickBtn2()
