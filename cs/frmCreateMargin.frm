@@ -139,7 +139,7 @@ End Sub
 Private Sub InitializeLayerForMargin(strWorkPlaneName As String)
     Dim ly As Esprit.Layer
     For Each ly In Document.Layers
-        If (ly.Name = "STL" Or ly.Name = "기본값" Or ly.Name = strWorkPlaneName + " CROSS BALL ENDMILL" Or ly.Name = strWorkPlaneName + " 마진") Then
+        If (ly.Name = "STL" Or ly.Name = "기본값" Or ly.Name = strWorkPlaneName + " 마진") Then
             ly.Visible = True
             If (ly.Name = strWorkPlaneName + " 마진") Then
             Document.ActiveLayer = ly
