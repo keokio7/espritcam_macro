@@ -18,6 +18,9 @@ Attribute VB_Exposed = False
 
 
 
+
+
+
 Private Sub chkREAR_Click()
     Dim strWorkPlane As String
     strWorkPlane = ""
