@@ -130,9 +130,9 @@ Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
 End Sub
 
 Private Sub cmdBtn2_Click()
-        Call ClickBtn1_2
 
-    
+            Call ClickBtn1_2
+ 
 End Sub
 
 Private Sub cmdRotate045_Click()

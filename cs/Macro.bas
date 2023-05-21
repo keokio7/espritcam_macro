@@ -299,31 +299,32 @@ End Sub
 '' BTN#1-2 [1-2] Generate toolpaths for [FRONT TURNING]. Please make sure the STL properly located."
 Public Sub ClickBtn1_2()
 
-Load frmSTLRotate
-frmSTLRotate.Hide
-Unload frmSTLRotate
+    Load frmSTLRotate
+    frmSTLRotate.Hide
+    Unload frmSTLRotate
+    
 
-
-
-Call Step1_2
-Call Step2_4
-Call Step2_6
-
-Dim ly As Esprit.Layer
-For Each ly In Document.Layers
-If (ly.Name = "STL" Or ly.Name = "기본값") Then
-ly.Visible = True
-End If
-Next
-
-Exit Sub
-
+        Call Step1_2
+        Call Step2_4
+        Call Step2_6
+      
+        
+        Dim ly As Esprit.Layer
+        For Each ly In Document.Layers
+            If (ly.Name = "STL" Or ly.Name = "기본값") Then
+                ly.Visible = True
+            End If
+        Next
+        
+   
+        Exit Sub
+  
 End Sub
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '' BTN#2 [2] Generate toolpaths for [ROUGH ENDMILL R6.0]. Please make sure the STL properly located."
 Public Sub ClickBtn2()
-  
+   
         
         
         Dim nRtn_0Deg As Integer
@@ -333,14 +334,15 @@ Public Sub ClickBtn2()
         nRtn_120Deg = 0
         nRtn_240Deg = 0
         
-     
+      
             nRtn_0Deg = generateSolidmilTurn("0DEG", "ROUGH ENDMILL R6.0", "1")
       
-   
+      
             nRtn_120Deg = generateSolidmilTurn("120DEG", "ROUGH ENDMILL R6.0", "2")
-   
+     
+    
             nRtn_240Deg = generateSolidmilTurn("240DEG", "ROUGH ENDMILL R6.0", "3")
-   
+     
     
         Dim ly As Esprit.Layer
         For Each ly In Document.Layers
@@ -350,7 +352,7 @@ Public Sub ClickBtn2()
         Next
     
         If (nRtn_0Deg = 1 And nRtn_120Deg = 1 And nRtn_240Deg = 1) Then
-        
+          
                 Call ReorderOperation
                 Unload frmCreateBorderSolidObject
                 Load frmCreateBorderSolidObject
@@ -361,9 +363,10 @@ Public Sub ClickBtn2()
                 Document.Refresh
                 frmCreateBorderSolidObject.Show (vbModeless)
                 
-      
+       
         End If
-    
+ 
+   
 End Sub
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
